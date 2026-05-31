@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://nkoqbfptvwiq"]
+
+[ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="1_gfukp"]
+
+[resource]
+default_font = ExtResource("1_gfukp")
+default_font_size = 50

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bs2t88ql76s80"]
+
+[ext_resource type="Script" uid="uid://c03ii7ar7hfjk" path="res://scenes/chapterselect.gd" id="1_dwqsf"]
+[ext_resource type="Texture2D" uid="uid://bhxpjwo1bkkso" path="res://asset/unknow_chap.png" id="2_fvfn4"]
+[ext_resource type="Texture2D" uid="uid://bgrblld4ec7he" path="res://asset/silversky_chap1.png" id="3_dpqx4"]
+[ext_resource type="Environment" uid="uid://c3cvwnqyv665j" path="res://asset/environment/cam3d_environment.tres" id="4_aqyg5"]
+[ext_resource type="Script" uid="uid://bj50t7vypj3u1" path="res://script/scroll_bkg.gd" id="5_fvfn4"]
+[ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="6_fvfn4"]
+[ext_resource type="ArrayMesh" uid="uid://cuovysjebl3sp" path="res://asset/models/ship-v2-white.mesh" id="7_rd748"]
+[ext_resource type="Script" uid="uid://bbcp70gy0ltvt" path="res://script/ship_vox_cursor.gd" id="9_fvfn4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpqx4"]
+albedo_texture = ExtResource("2_fvfn4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dwqsf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqyg5"]
+albedo_texture = ExtResource("2_fvfn4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_24a70"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rg2pc"]
+albedo_color = Color(0.92941177, 0.92941177, 0.92941177, 1)
+albedo_texture = ExtResource("3_dpqx4")
+
+[node name="Chapterselect" type="Node3D" unique_id=1001545375]
+script = ExtResource("1_dwqsf")
+
+[node name="chap3" type="MeshInstance3D" parent="." unique_id=1287527746]
+transform = Transform3D(1.7, 0, 0, 0, -7.430937e-08, -1.7, 0, 1.7, -7.430937e-08, 5, 0, -2)
+material_override = SubResource("StandardMaterial3D_dpqx4")
+mesh = SubResource("PlaneMesh_dwqsf")
+skeleton = NodePath("../chap1")
+
+[node name="chap2" type="MeshInstance3D" parent="." unique_id=303968944]
+transform = Transform3D(1.7, 0, 0, 0, -7.430936e-08, -1.7, 0, 1.7, -7.430936e-08, 0.1, 0, -2)
+material_override = SubResource("StandardMaterial3D_aqyg5")
+mesh = SubResource("PlaneMesh_24a70")
+skeleton = NodePath("../chap1")
+
+[node name="chap1" type="MeshInstance3D" parent="." unique_id=962228062]
+transform = Transform3D(1.7, 0, 0, 0, -7.430936e-08, -1.7, 0, 1.7, -7.430936e-08, -5, 0, -2)
+material_override = SubResource("StandardMaterial3D_rg2pc")
+mesh = SubResource("PlaneMesh_dwqsf")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1107454525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+environment = ExtResource("4_aqyg5")
+script = ExtResource("5_fvfn4")
+
+[node name="title" type="Label3D" parent="." unique_id=1873694907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, -2)
+text = "Choose Chapter"
+font = ExtResource("6_fvfn4")
+font_size = 200
+
+[node name="ShipVox" type="MeshInstance3D" parent="." unique_id=2136138083]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0.434)
+mesh = ExtResource("7_rd748")
+script = ExtResource("9_fvfn4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1573348165]
+transform = Transform3D(0.18880802, -0.5814899, 0.79134125, 0.18103637, 0.8126338, 0.5539421, -0.96518254, 0.03867282, 0.2587027, 0, 1.8375034, 2.7611432)
+light_energy = 0.518
+sky_mode = 1

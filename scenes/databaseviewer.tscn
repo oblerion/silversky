@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b11i5838folah"]
+
+[ext_resource type="Script" uid="uid://d1buqh6j01nvt" path="res://scenes/databaseviewer.gd" id="1_cctgt"]
+[ext_resource type="JSON" path="res://element/weapons_database.json" id="2_867pl"]
+
+[node name="Bulletmanager" type="Node2D" unique_id=423996120]
+
+[node name="Tree" type="Tree" parent="." unique_id=1110946410]
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 1216.0
+offset_bottom = 688.0
+focus_mode = 1
+columns = 3
+hide_root = true
+scroll_horizontal_enabled = false
+script = ExtResource("1_cctgt")
+json_database = ExtResource("2_867pl")

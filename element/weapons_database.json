@@ -1,0 +1,14 @@
+{
+	"blaster":{
+		"mesh":"res://asset/models/weapon_blaster.mesh",
+		"material":"",
+		"bullet":"blaster",
+		"firerate":1
+	},
+	"blaster2":{
+		"mesh":"res://asset/models/weapon_blaster.mesh",
+		"material":"",
+		"bullet":"blaster",
+		"firerate":1
+	}
+}

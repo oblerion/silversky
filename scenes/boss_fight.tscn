@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://dvsnc6v4clcvy"]
+
+[ext_resource type="PackedScene" uid="uid://xpwy1o0l77vq" path="res://asset/environment/world_environment.res" id="1_7hhev"]
+[ext_resource type="Script" uid="uid://d2ehtelsnmvcp" path="res://scenes/boss_fight.gd" id="1_7imqq"]
+[ext_resource type="Script" uid="uid://cbmt3bea7ehj2" path="res://UTH/uth.gd" id="1_31neg"]
+[ext_resource type="ArrayMesh" uid="uid://c5sv7fdrwmc54" path="res://asset/models/sun.mesh" id="1_r7oq6"]
+[ext_resource type="PackedScene" uid="uid://dvbj6syadcb2n" path="res://element/monolith.tscn" id="1_x4w2v"]
+[ext_resource type="Script" uid="uid://cujeqrwcn7qxk" path="res://element/player_ship.gd" id="2_31neg"]
+[ext_resource type="Script" uid="uid://biipc4hblbgn8" path="res://script/rotation_cam.gd" id="3_2tdpq"]
+[ext_resource type="ArrayMesh" uid="uid://cuovysjebl3sp" path="res://asset/models/ship-v2-white.mesh" id="3_62gkx"]
+[ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="5_67f06"]
+[ext_resource type="Script" uid="uid://2lvkvdujcwpd" path="res://lib/gauge.gd" id="7_2tdpq"]
+[ext_resource type="PackedScene" uid="uid://b8wv127nnac5o" path="res://scenes/pause_menu.tscn" id="10_7imqq"]
+[ext_resource type="PackedScene" uid="uid://csbcylv0f08s2" path="res://asset/models/monolith-vox.glb" id="12_r7oq6"]
+
+[sub_resource type="Theme" id="Theme_x4w2v"]
+default_font = ExtResource("5_67f06")
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_31neg"]
+default_font = ExtResource("5_67f06")
+default_font_size = 20
+
+[node name="Node3D" type="Node3D" unique_id=1453410395]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=889428090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4363.6577)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=668001623]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0)
+mesh = ExtResource("1_r7oq6")
+
+[node name="WorldEnvironment" parent="." unique_id=603698646 instance=ExtResource("1_7hhev")]
+
+[node name="game" type="Node3D" parent="." unique_id=766404557]
+script = ExtResource("1_7imqq")
+
+[node name="Monolith" parent="game" unique_id=1170716217 instance=ExtResource("1_x4w2v")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1890.0112, 0, 0)
+
+[node name="player" type="MeshInstance3D" parent="game" unique_id=490087154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.350647, 0, 0)
+mesh = ExtResource("3_62gkx")
+skeleton = NodePath("../..")
+script = ExtResource("2_31neg")
+
+[node name="Camera3D" type="Camera3D" parent="game" unique_id=1888020156]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -143.44427, 48, 0)
+top_level = true
+near = 0.016
+script = ExtResource("3_2tdpq")
+mouse_sensitivity = 0.06
+
+[node name="Control" type="Control" parent="game" unique_id=913615511 node_paths=PackedStringArray("player")]
+process_priority = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_31neg")
+player = NodePath("../player")
+
+[node name="HPBar" type="ColorRect" parent="game/Control" unique_id=143014743]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 528.0
+offset_right = 496.0
+offset_bottom = 628.0
+color = Color(0.28235295, 1, 0.3372549, 1)
+script = ExtResource("7_2tdpq")
+_value = 58.0
+
+[node name="HPText" type="RichTextLabel" parent="game/Control" unique_id=242892677]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.031000001
+anchor_bottom = 0.031000001
+offset_left = 456.0
+offset_top = 560.992
+offset_right = 575.0
+offset_bottom = 600.992
+theme = SubResource("Theme_x4w2v")
+theme_override_colors/default_color = Color(0.28235295, 1, 0.3372549, 1)
+text = "hp "
+
+[node name="MoveText" type="RichTextLabel" parent="game/Control" unique_id=390331723]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 568.0
+offset_right = 847.0
+offset_bottom = 588.0
+theme = SubResource("Theme_31neg")
+theme_override_colors/default_color = Color(0.28235295, 1, 1, 1)
+text = "Engine
+"
+fit_content = true
+
+[node name="MoveTextF" type="RichTextLabel" parent="game/Control" unique_id=392199321]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 520.0
+offset_right = 847.0
+offset_bottom = 549.0
+theme = SubResource("Theme_31neg")
+theme_override_colors/default_color = Color(0.28235295, 1, 1, 1)
+text = "F
+"
+fit_content = true
+
+[node name="MoveTextB" type="RichTextLabel" parent="game/Control" unique_id=1790161936]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 616.0
+offset_right = 847.0
+offset_bottom = 645.0
+theme = SubResource("Theme_31neg")
+theme_override_colors/default_color = Color(0.28235295, 1, 1, 1)
+text = "B
+"
+fit_content = true
+
+[node name="cursor" type="Control" parent="game/Control" unique_id=920502888]
+anchors_preset = 0
+offset_left = 632.0
+offset_top = 375.0
+offset_right = 648.0
+offset_bottom = 391.0
+
+[node name="ColorRect2" type="ColorRect" parent="game/Control/cursor" unique_id=1983945218]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 16.0
+offset_bottom = 9.0
+
+[node name="ColorRect" type="ColorRect" parent="game/Control/cursor" unique_id=1361841542]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 9.0
+offset_bottom = 16.0
+
+[node name="MoveBar_test2" type="ColorRect" parent="game/Control" unique_id=1600833561]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 584.0
+offset_right = 784.0
+offset_bottom = 624.0
+color = Color(0.28235295, 1, 1, 1)
+script = ExtResource("7_2tdpq")
+reverse = true
+dynamic_color = false
+
+[node name="MoveBar_test" type="ColorRect" parent="game/Control" unique_id=1689353671]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 528.0
+offset_right = 784.0
+offset_bottom = 568.0
+color = Color(0.28235295, 1, 1, 1)
+script = ExtResource("7_2tdpq")
+dynamic_color = false
+
+[node name="PauseMenu" parent="." unique_id=1444985250 node_paths=PackedStringArray("node") instance=ExtResource("10_7imqq")]
+node = NodePath("../game")
+
+[node name="monolith-vox" parent="." unique_id=998753561 instance=ExtResource("12_r7oq6")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1890.0112, 0, 0)

@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://b00hlrayvjlnj"]
+
+[ext_resource type="Script" uid="uid://dd8icgf1tdxy8" path="res://scenes/title.gd" id="1_th0ar"]
+[ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="2_ia1n6"]
+[ext_resource type="Environment" uid="uid://c3cvwnqyv665j" path="res://asset/environment/cam3d_environment.tres" id="3_hiwto"]
+[ext_resource type="Script" uid="uid://bj50t7vypj3u1" path="res://script/scroll_bkg.gd" id="4_yql1r"]
+[ext_resource type="PackedScene" uid="uid://c8gwyctmucwxt" path="res://asset/ui/button_title.res" id="5_4rr2b"]
+[ext_resource type="Theme" uid="uid://nkoqbfptvwiq" path="res://asset/materials/btn_theme.tres" id="5_b3w7a"]
+
+[sub_resource type="Theme" id="Theme_ia1n6"]
+default_font = ExtResource("2_ia1n6")
+default_font_size = 150
+
+[sub_resource type="Theme" id="Theme_4rr2b"]
+default_font = ExtResource("2_ia1n6")
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_hiwto"]
+default_font = ExtResource("2_ia1n6")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yql1r"]
+bg_color = Color(0.20784314, 0.20784314, 0.20784314, 0.7529412)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8560673, 0.8560673, 0.856067, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ia1n6"]
+bg_color = Color(0.42365003, 0.42365086, 0.42365035, 0.88235295)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[node name="Title" type="Node3D" unique_id=1087469837]
+script = ExtResource("1_th0ar")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1542495403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.64)
+environment = ExtResource("3_hiwto")
+script = ExtResource("4_yql1r")
+
+[node name="title2" type="Label" parent="." unique_id=1484685754]
+offset_top = 51.0
+offset_right = 1276.0
+offset_bottom = 151.0
+theme = SubResource("Theme_ia1n6")
+text = "Silversky"
+horizontal_alignment = 1
+
+[node name="version" type="Label" parent="." unique_id=2054965814]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -48.0
+offset_right = -20.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_4rr2b")
+text = "vproto-0.1"
+
+[node name="author2" type="Label" parent="." unique_id=2069237810]
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.93333334
+anchor_right = 0.225
+anchor_bottom = 0.96944445
+offset_left = 8.0
+offset_right = 8.0
+theme = SubResource("Theme_hiwto")
+text = " by oblerion studio"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_start" parent="." unique_id=1381326687 instance=ExtResource("5_4rr2b")]
+
+[node name="Button_option" type="Button" parent="." unique_id=1020440587]
+offset_left = 472.0
+offset_top = 374.0
+offset_right = 797.0
+offset_bottom = 433.0
+theme = ExtResource("5_b3w7a")
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.17254902, 0.65882355, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_yql1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ia1n6")
+text = "option"
+
+[node name="Button_credit" type="Button" parent="." unique_id=1668601640]
+offset_left = 472.0
+offset_top = 472.0
+offset_right = 797.0
+offset_bottom = 531.0
+theme = ExtResource("5_b3w7a")
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.17254902, 0.65882355, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_yql1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ia1n6")
+text = "credit"

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b8wv127nnac5o"]
+
+[ext_resource type="Script" uid="uid://bbxy1s6jgebdn" path="res://scenes/pause_menu.gd" id="1_kukqi"]
+[ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="2_5d2l8"]
+[ext_resource type="PackedScene" uid="uid://8ert8nsvfpjs" path="res://asset/ui/button_base.res" id="3_7l7mv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v4r4p"]
+font = ExtResource("2_5d2l8")
+font_size = 75
+
+[node name="PauseMenu" type="Node3D" unique_id=2033605392]
+script = ExtResource("1_kukqi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1122022769]
+clip_children = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5137255, 0.5137255, 0.5137255, 0.84705883)
+
+[node name="title" type="Label" parent="." unique_id=247793793]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.5
+offset_top = 148.0
+offset_right = 91.5
+offset_bottom = 224.0
+grow_horizontal = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_v4r4p")
+
+[node name="btn_continue" parent="." unique_id=1381326687 instance=ExtResource("3_7l7mv")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.5
+offset_top = 356.0
+offset_right = 162.5
+offset_bottom = 415.0
+grow_horizontal = 2
+text = "continue"
+
+[node name="btn_option" parent="." unique_id=599051727 instance=ExtResource("3_7l7mv")]
+offset_left = 480.0
+offset_top = 468.0
+offset_right = 805.0
+offset_bottom = 527.0
+text = "option"
+
+[node name="btn_title" parent="." unique_id=207365906 instance=ExtResource("3_7l7mv")]
+offset_left = 480.0
+offset_top = 580.0
+offset_right = 805.0
+offset_bottom = 639.0
+text = "return title"

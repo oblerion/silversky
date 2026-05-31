@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://djishjdg7vimg"]
+
+[ext_resource type="Script" uid="uid://dnjc4wptsdrfw" path="res://scenes/shoose_ship.gd" id="1_3ftyv"]
+[ext_resource type="Environment" uid="uid://c3cvwnqyv665j" path="res://asset/environment/cam3d_environment.tres" id="2_wxa7e"]
+[ext_resource type="ArrayMesh" uid="uid://cuovysjebl3sp" path="res://asset/models/ship-v2-white.mesh" id="3_wxa7e"]
+[ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="4_0lsin"]
+[ext_resource type="PackedScene" uid="uid://8ert8nsvfpjs" path="res://asset/ui/button_base.res" id="6_4wc5o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g1847"]
+font = ExtResource("4_0lsin")
+font_size = 80
+
+[node name="ShooseShip" type="Node3D" unique_id=894121662]
+script = ExtResource("1_3ftyv")
+metadata/_edit_vertical_guides_ = [-216.0]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=832761400]
+transform = Transform3D(0.31090078, 0.022831127, -0.95016813, -0.0732382, 0.9973145, -9.918645e-10, 0.94761646, 0.06958861, 0.31173795, -193.998, 23.539, 54.393463)
+top_level = true
+environment = ExtResource("2_wxa7e")
+near = 0.016
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1492825904]
+transform = Transform3D(0.31508598, -0.9490632, 1.7677679e-09, -0.073108494, -0.024271792, 0.9970286, -0.9462431, -0.31414977, -0.077032275, 0, 214.59183, 0)
+light_energy = 4.321
+
+[node name="ShipV2White" type="MeshInstance3D" parent="." unique_id=215173663]
+visible = false
+mesh = ExtResource("3_wxa7e")
+
+[node name="Control" type="Control" parent="." unique_id=597574904]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1928295313]
+visible = false
+layout_mode = 0
+offset_left = 320.0
+offset_top = 664.0
+offset_right = 960.0
+offset_bottom = 672.0
+color = Color(0.7539839, 0.75398386, 0.75398386, 1)
+
+[node name="HSlider" type="HSlider" parent="Control" unique_id=920663540]
+visible = false
+modulate = Color(0, 1, 0, 1)
+top_level = true
+use_parent_material = true
+layout_mode = 0
+offset_left = 320.0
+offset_top = 640.0
+offset_right = 960.0
+offset_bottom = 696.0
+ticks_position = 3
+
+[node name="title" type="Label" parent="Control" unique_id=1896315312]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 1280.0
+offset_bottom = 152.0
+text = "Shoose Ship"
+label_settings = SubResource("LabelSettings_g1847")
+horizontal_alignment = 1
+
+[node name="btn_back" parent="Control" unique_id=1381326687 instance=ExtResource("6_4wc5o")]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 640.0
+offset_right = 192.0
+offset_bottom = 699.0
+text = "back"
+
+[node name="btn_select" parent="Control" unique_id=609784099 instance=ExtResource("6_4wc5o")]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 640.0
+offset_right = 1216.0
+offset_bottom = 699.0
+text = "select"
+
+[node name="btn_-" parent="Control" unique_id=445368819 instance=ExtResource("6_4wc5o")]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 640.0
+offset_right = 576.0
+offset_bottom = 699.0
+text = "<<"
+
+[node name="btn_+" parent="Control" unique_id=366301256 instance=ExtResource("6_4wc5o")]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 640.0
+offset_right = 832.0
+offset_bottom = 699.0
+text = ">>"

@@ -1,0 +1,7 @@
+{
+	"corona":"res://asset/models/ship-v2-red.mesh",
+	"flash":"res://asset/models/ship-v2-blue.mesh",
+	"aurora":"res://asset/models/ship-v2-green.mesh",
+	"raven":"res://asset/models/ship-v2-black.mesh",
+	"sky":"res://asset/models/ship-v2-white.mesh",
+}
