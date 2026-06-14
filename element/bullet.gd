@@ -20,8 +20,8 @@ func _init(pspeed:float,plifetime:float,pmesh:String,pmaterial:String):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(lifetime>0):
-		position.x += sin(rotation.y)*speed*delta
-		position.z += cos(rotation.y)*speed*delta
+		position.x += sin(rotation.y)*speed*10*delta
+		position.z += cos(rotation.y)*speed*10*delta
 		lifetime -= delta
 	else:
-		pass #get_tree().current_scene.remove_child(self)
+		get_tree().current_scene.remove_child(self)

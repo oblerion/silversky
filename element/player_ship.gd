@@ -3,6 +3,7 @@ extends MeshInstance3D
 var _tmp_rotY =0
 var _movepower =0.0
 var _hp = 80
+var _weapons:Dictionary[int,Weapon]
 @onready var cam = get_node("../Camera3D")
 func moveForward(speed:float,delta:float):
 	position.x += sin(cam.rotation.y)*delta*-speed
@@ -33,6 +34,16 @@ func getHp()->int:
 	return _hp
 func getMovePower()->float:
 	return _movepower
+	
+func equipWeapon(id:int,name:String):
+	var w = WeaponManager.createWeapon(
+		name,
+		Vector3(0,25,0),
+		Vector3.ZERO
+	)
+	_weapons.set(id,w)
+	add_child(w)
+	
 func _ready() -> void:
 	if(cam==null):
 		print("WARNING : no try to execute player scene")
@@ -41,6 +52,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if(cam!=null):
+		if(Input.is_action_pressed("#fire")):
+			for key in _weapons:
+				_weapons[key].fire(delta)
 		if(Input.is_action_pressed("#move_forward")):#GetMouseY()<=(float)(GetWindowHeight())/2):
 			var spdpourcent = 0.5 #1-(GetMouseY()/((float)(GetWindowHeight())/2))
 			if(Input.is_action_pressed("#boost")):

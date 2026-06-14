@@ -5,6 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cuovysjebl3sp" path="res://asset/models/ship-v2-white.mesh" id="3_wxa7e"]
 [ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="4_0lsin"]
 [ext_resource type="PackedScene" uid="uid://8ert8nsvfpjs" path="res://asset/ui/button_base.res" id="6_4wc5o"]
+[ext_resource type="PackedScene" uid="uid://xpwy1o0l77vq" path="res://asset/environment/world_environment.res" id="6_yjt0j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1847"]
 font = ExtResource("4_0lsin")
@@ -13,6 +14,8 @@ font_size = 80
 [node name="ShooseShip" type="Node3D" unique_id=894121662]
 script = ExtResource("1_3ftyv")
 metadata/_edit_vertical_guides_ = [-216.0]
+
+[node name="WorldEnvironment" parent="." unique_id=603698646 instance=ExtResource("6_yjt0j")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=832761400]
 transform = Transform3D(0.31090078, 0.022831127, -0.95016813, -0.0732382, 0.9973145, -9.918645e-10, 0.94761646, 0.06958861, 0.31173795, -193.998, 23.539, 54.393463)

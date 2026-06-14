@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://ejkhw28i5uip" path="res://asset/shaders/starfield.gdshader" id="1_jo12b"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5xh2k"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_unyar"]
 shader = ExtResource("1_jo12b")
 shader_parameter/sky_color = Color(0.03, 0.05, 0.11, 1)
 shader_parameter/star_base_color = Color(0.8, 1, 0.3, 1)
@@ -10,16 +10,16 @@ shader_parameter/star_hue_offset = 0.6
 shader_parameter/star_intensity = 0.08
 shader_parameter/star_twinkle_speed = 0.8
 shader_parameter/star_twinkle_intensity = 0.2
-shader_parameter/layer_scale = 19.318000917605
+shader_parameter/layer_scale = 20.0
 shader_parameter/layer_scale_step = 10.0
 shader_parameter/layers_count = 3
 
-[sub_resource type="Sky" id="Sky_ojksg"]
-sky_material = SubResource("ShaderMaterial_5xh2k")
+[sub_resource type="Sky" id="Sky_ljkts"]
+sky_material = SubResource("ShaderMaterial_unyar")
 
 [resource]
 background_mode = 2
-sky = SubResource("Sky_ojksg")
+sky = SubResource("Sky_ljkts")
 ambient_light_source = 2
 ambient_light_color = Color(0.27022192, 0.27022192, 0.2702219, 1)
 ambient_light_energy = 16.0

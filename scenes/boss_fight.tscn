@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://xpwy1o0l77vq" path="res://asset/environment/world_environment.res" id="1_7hhev"]
 [ext_resource type="Script" uid="uid://d2ehtelsnmvcp" path="res://scenes/boss_fight.gd" id="1_7imqq"]
 [ext_resource type="Script" uid="uid://cbmt3bea7ehj2" path="res://UTH/uth.gd" id="1_31neg"]
-[ext_resource type="ArrayMesh" uid="uid://c5sv7fdrwmc54" path="res://asset/models/sun.mesh" id="1_r7oq6"]
-[ext_resource type="PackedScene" uid="uid://dvbj6syadcb2n" path="res://element/monolith.tscn" id="1_x4w2v"]
 [ext_resource type="Script" uid="uid://cujeqrwcn7qxk" path="res://element/player_ship.gd" id="2_31neg"]
 [ext_resource type="Script" uid="uid://biipc4hblbgn8" path="res://script/rotation_cam.gd" id="3_2tdpq"]
 [ext_resource type="ArrayMesh" uid="uid://cuovysjebl3sp" path="res://asset/models/ship-v2-white.mesh" id="3_62gkx"]
@@ -23,20 +21,10 @@ default_font_size = 20
 
 [node name="Node3D" type="Node3D" unique_id=1453410395]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=889428090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4363.6577)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=668001623]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0)
-mesh = ExtResource("1_r7oq6")
-
 [node name="WorldEnvironment" parent="." unique_id=603698646 instance=ExtResource("1_7hhev")]
 
 [node name="game" type="Node3D" parent="." unique_id=766404557]
 script = ExtResource("1_7imqq")
-
-[node name="Monolith" parent="game" unique_id=1170716217 instance=ExtResource("1_x4w2v")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1890.0112, 0, 0)
 
 [node name="player" type="MeshInstance3D" parent="game" unique_id=490087154]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.350647, 0, 0)
@@ -159,8 +147,8 @@ color = Color(0.28235295, 1, 1, 1)
 script = ExtResource("7_2tdpq")
 dynamic_color = false
 
+[node name="monolith-vox" parent="game" unique_id=998753561 instance=ExtResource("12_r7oq6")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1890.0112, 0, 0)
+
 [node name="PauseMenu" parent="." unique_id=1444985250 node_paths=PackedStringArray("node") instance=ExtResource("10_7imqq")]
 node = NodePath("../game")
-
-[node name="monolith-vox" parent="." unique_id=998753561 instance=ExtResource("12_r7oq6")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1890.0112, 0, 0)

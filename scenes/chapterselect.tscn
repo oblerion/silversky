@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://bs2t88ql76s80"]
 
 [ext_resource type="Script" uid="uid://c03ii7ar7hfjk" path="res://scenes/chapterselect.gd" id="1_dwqsf"]
+[ext_resource type="PackedScene" uid="uid://xpwy1o0l77vq" path="res://asset/environment/world_environment.res" id="2_dwqsf"]
 [ext_resource type="Texture2D" uid="uid://bhxpjwo1bkkso" path="res://asset/unknow_chap.png" id="2_fvfn4"]
 [ext_resource type="Texture2D" uid="uid://bgrblld4ec7he" path="res://asset/silversky_chap1.png" id="3_dpqx4"]
-[ext_resource type="Environment" uid="uid://c3cvwnqyv665j" path="res://asset/environment/cam3d_environment.tres" id="4_aqyg5"]
-[ext_resource type="Script" uid="uid://bj50t7vypj3u1" path="res://script/scroll_bkg.gd" id="5_fvfn4"]
 [ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="6_fvfn4"]
 [ext_resource type="ArrayMesh" uid="uid://cuovysjebl3sp" path="res://asset/models/ship-v2-white.mesh" id="7_rd748"]
 [ext_resource type="Script" uid="uid://bbcp70gy0ltvt" path="res://script/ship_vox_cursor.gd" id="9_fvfn4"]
@@ -26,6 +25,8 @@ albedo_texture = ExtResource("3_dpqx4")
 [node name="Chapterselect" type="Node3D" unique_id=1001545375]
 script = ExtResource("1_dwqsf")
 
+[node name="WorldEnvironment" parent="." unique_id=603698646 instance=ExtResource("2_dwqsf")]
+
 [node name="chap3" type="MeshInstance3D" parent="." unique_id=1287527746]
 transform = Transform3D(1.7, 0, 0, 0, -7.430937e-08, -1.7, 0, 1.7, -7.430937e-08, 5, 0, -2)
 material_override = SubResource("StandardMaterial3D_dpqx4")
@@ -45,8 +46,6 @@ mesh = SubResource("PlaneMesh_dwqsf")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1107454525]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-environment = ExtResource("4_aqyg5")
-script = ExtResource("5_fvfn4")
 
 [node name="title" type="Label3D" parent="." unique_id=1873694907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, -2)

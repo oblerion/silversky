@@ -3,12 +3,12 @@
 		"mesh":"res://asset/models/weapon_blaster.mesh",
 		"material":"",
 		"bullet":"blaster",
-		"firerate":1
+		"firerate":2
 	},
-	"blaster2":{
-		"mesh":"res://asset/models/weapon_blaster.mesh",
+	"canon":{
+		"mesh":"res://asset/models/weapon_canon.mesh",
 		"material":"",
-		"bullet":"blaster",
+		"bullet":"canon",
 		"firerate":1
 	}
 }

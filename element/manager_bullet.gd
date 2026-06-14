@@ -20,7 +20,7 @@ static func _readDatabase() -> Dictionary[String,Bullet]:
 	#
 	#return b
 
-static func createBullet(pname:String,ppos:Vector3,prot:Vector3)->Variant:
+static func createBullet(pname:String,ppos:Vector3,prot:Vector3)->Bullet:
 	var tab = JSONUTILS.read("res://element/bullets_database.json")
 	var tbul = tab.get(pname)
 	var bul = Bullet.new(tbul["speed"],tbul["lifetime"],tbul["mesh"],tbul["material"])

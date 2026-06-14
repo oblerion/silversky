@@ -1,16 +1,16 @@
 {
 	"blaster":{
-		"lifetime":2.0,
-		"speed":   1.0,
+		"lifetime":5.0,
+		"speed":   30.0,
 		"damage":  1,
 		"mesh":"res://asset/models/bullet_blaster.mesh",
 		"material":""
 	},
 	"canon":{
-		"lifetime":2.0,
-		"speed":   1.0,
+		"lifetime":5.0,
+		"speed":   50.0,
 		"damage":  1,
-		"mesh":"res://asset/models/bullet_blaster.mesh",
+		"mesh":"res://asset/models/bullet_canon.mesh",
 		"material":""	
 	}
 }

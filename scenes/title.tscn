@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b00hlrayvjlnj"]
 
 [ext_resource type="Script" uid="uid://dd8icgf1tdxy8" path="res://scenes/title.gd" id="1_th0ar"]
+[ext_resource type="PackedScene" uid="uid://xpwy1o0l77vq" path="res://asset/environment/world_environment.res" id="2_4rr2b"]
 [ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="2_ia1n6"]
-[ext_resource type="Environment" uid="uid://c3cvwnqyv665j" path="res://asset/environment/cam3d_environment.tres" id="3_hiwto"]
 [ext_resource type="Script" uid="uid://bj50t7vypj3u1" path="res://script/scroll_bkg.gd" id="4_yql1r"]
 [ext_resource type="PackedScene" uid="uid://c8gwyctmucwxt" path="res://asset/ui/button_title.res" id="5_4rr2b"]
 [ext_resource type="Theme" uid="uid://nkoqbfptvwiq" path="res://asset/materials/btn_theme.tres" id="5_b3w7a"]
@@ -35,10 +35,11 @@ corner_radius_top_right = 2
 [node name="Title" type="Node3D" unique_id=1087469837]
 script = ExtResource("1_th0ar")
 
+[node name="WorldEnvironment" parent="." unique_id=603698646 instance=ExtResource("2_4rr2b")]
+script = ExtResource("4_yql1r")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1542495403]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.64)
-environment = ExtResource("3_hiwto")
-script = ExtResource("4_yql1r")
 
 [node name="title2" type="Label" parent="." unique_id=1484685754]
 offset_top = 51.0

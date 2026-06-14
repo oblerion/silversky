@@ -1,31 +1,10 @@
 [gd_scene format=3 uid="uid://cmsu0rk0vt1ef"]
 
-[ext_resource type="Shader" uid="uid://ejkhw28i5uip" path="res://asset/shaders/starfield.gdshader" id="1_5egdn"]
 [ext_resource type="Script" uid="uid://cule43ds78nc" path="res://scenes/credit.gd" id="1_st0h4"]
+[ext_resource type="PackedScene" uid="uid://xpwy1o0l77vq" path="res://asset/environment/world_environment.res" id="2_mkchp"]
 [ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="2_st0h4"]
 [ext_resource type="Script" uid="uid://bj50t7vypj3u1" path="res://script/scroll_bkg.gd" id="3_mkchp"]
 [ext_resource type="PackedScene" uid="uid://8ert8nsvfpjs" path="res://asset/ui/button_base.res" id="5_mkchp"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_32mfc"]
-shader = ExtResource("1_5egdn")
-shader_parameter/sky_color = Color(0.03, 0.05, 0.11, 1)
-shader_parameter/star_base_color = Color(0.8, 1, 0.3, 1)
-shader_parameter/star_hue_offset = 0.5890000279775
-shader_parameter/star_intensity = 0.0800000038
-shader_parameter/star_twinkle_speed = 0.8
-shader_parameter/star_twinkle_intensity = 0.2
-shader_parameter/layer_scale = 20.0
-shader_parameter/layer_scale_step = 10.0
-shader_parameter/layers_count = 3
-
-[sub_resource type="Sky" id="Sky_mkchp"]
-sky_material = SubResource("ShaderMaterial_32mfc")
-
-[sub_resource type="Environment" id="Environment_y6cwi"]
-background_mode = 2
-sky = SubResource("Sky_mkchp")
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Theme" id="Theme_st0h4"]
 default_font = ExtResource("2_st0h4")
@@ -38,10 +17,11 @@ default_font_size = 100
 [node name="Credit" type="Node3D" unique_id=1012090067]
 script = ExtResource("1_st0h4")
 
+[node name="WorldEnvironment" parent="." unique_id=603698646 instance=ExtResource("2_mkchp")]
+script = ExtResource("3_mkchp")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=660419539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.412)
-environment = SubResource("Environment_y6cwi")
-script = ExtResource("3_mkchp")
 
 [node name="credit" type="Label" parent="." unique_id=98283459]
 offset_left = -5.0

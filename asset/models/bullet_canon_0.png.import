@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmqp0bgy02umc"
-path.s3tc="res://.godot/imported/bullet_blaster_Image_0.png-76c245917535bba4b5e6f93e84caae46.s3tc.ctex"
+uid="uid://b7jj15i30b20v"
+path.s3tc="res://.godot/imported/bullet_canon_0.png-1f2e89fd741d6ef480cf0d3336619185.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2edf97189e2bfb6d120e4c34f394ef8f"
+"md5": "44601385c92ee3d0391354e8a613d715"
 }
 
 [deps]
 
-source_file="res://asset/models/bullet_blaster_Image_0.png"
-dest_files=["res://.godot/imported/bullet_blaster_Image_0.png-76c245917535bba4b5e6f93e84caae46.s3tc.ctex"]
+source_file="res://asset/models/bullet_canon_0.png"
+dest_files=["res://.godot/imported/bullet_canon_0.png-1f2e89fd741d6ef480cf0d3336619185.s3tc.ctex"]
 
 [params]
 

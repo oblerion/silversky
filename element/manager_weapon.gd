@@ -17,9 +17,10 @@ static func _readDatabase() -> Dictionary[String,Weapon]:
 static func createWeapon(pname:String,ppos:Vector3,prot:Vector3)->Weapon:
 	if(models.has(pname)):
 		var w = models.get(pname)
-		w.position = ppos
-		w.rotation = prot
-		return w
+		var nw:Weapon = Weapon.copy(w)
+		nw.position = ppos
+		nw.rotation = prot
+		return nw
 	return null
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

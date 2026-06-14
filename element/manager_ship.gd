@@ -9,7 +9,7 @@ static func _loadDatabase()->Array[String]:
 	var json = JSONUTILS.read("res://element/ships_database.json")
 	for key in json:
 		var ship = load(json[key])
-		if(player_ship.is_empty()):
+		if(ShipManager.player_ship.is_empty()):
 			ShipManager.player_ship= key
 		_list_id.push_back(key)
 		addChild(ship)

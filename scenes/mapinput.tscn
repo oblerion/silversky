@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dsemm1duw3vwg"]
 
 [ext_resource type="Script" uid="uid://btd4gnrjxa4s5" path="res://scenes/mapinput.gd" id="1_aquaj"]
+[ext_resource type="Script" uid="uid://2iktc0eftwmw" path="res://scenes/smapinput.gd" id="1_bjm0c"]
 [ext_resource type="FontFile" uid="uid://cx210kqe65rxu" path="res://asset/fonts/Softball_Gold.ttf" id="2_fa2wc"]
 [ext_resource type="PackedScene" uid="uid://8ert8nsvfpjs" path="res://asset/ui/button_base.res" id="3_bcxoa"]
 
@@ -9,7 +10,7 @@ default_font = ExtResource("2_fa2wc")
 default_font_size = 65
 
 [node name="Node2D" type="Node3D" unique_id=958371178]
-script = ExtResource("1_aquaj")
+script = ExtResource("1_bjm0c")
 
 [node name="Control" type="Control" parent="." unique_id=1754892229]
 layout_mode = 3
@@ -32,7 +33,7 @@ offset_left = 128.0
 offset_top = 128.0
 offset_right = 1152.0
 offset_bottom = 576.0
-columns = 3
+script = ExtResource("1_aquaj")
 
 [node name="button_back" parent="Control" unique_id=1381326687 instance=ExtResource("3_bcxoa")]
 layout_direction = 4
