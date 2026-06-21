@@ -2,7 +2,7 @@ extends Node3D
 class_name Ship_editor
 
 @onready var ship_node:Node3D = $"ship-v2"
-@onready var ship: MeshInstance3D = $"ship-v2/ship_main"
+@onready var ship: MeshInstance3D = $"ship-v2"
 @onready var control = $Control
 @onready var colorpick: ColorPicker = $Control/ColorPicker
 @onready var btn_reset:Button = $Control/btn_reset

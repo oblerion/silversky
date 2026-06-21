@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c36xwiyepdmii" path="res://scenes/edit_ship.gd" id="1_bxnql"]
 [ext_resource type="PackedScene" uid="uid://xpwy1o0l77vq" path="res://asset/environment/world_environment.res" id="2_nhvli"]
-[ext_resource type="PackedScene" uid="uid://dk50it4bnxrb4" path="res://asset/models/ship-v2.glb" id="3_s4vwq"]
+[ext_resource type="ArrayMesh" uid="uid://d2ye4vjwxssjq" path="res://asset/models/ship-v2.mesh" id="3_nhvli"]
 [ext_resource type="Theme" uid="uid://nkoqbfptvwiq" path="res://asset/materials/btn_theme.tres" id="4_nhvli"]
 
 [node name="Node3D" type="Node3D" unique_id=1511567165]
@@ -18,8 +18,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7276077, 44.645878, 93.151)
 light_energy = 1.453
 light_indirect_energy = 0.396
 
-[node name="ship-v2" parent="." unique_id=1480797343 instance=ExtResource("3_s4vwq")]
-transform = Transform3D(0.7274136, 0, -0.68619925, 0, 1, 0, 0.68619925, 0, 0.7274136, -0.186, 4.153, 13.168165)
+[node name="ship-v2" type="MeshInstance3D" parent="." unique_id=57132650]
+transform = Transform3D(0.7274136, 0, -0.68619925, 0, 1, 0, 0.68619925, 0, 0.7274136, -0.186, 4.153, 2.684805)
+mesh = ExtResource("3_nhvli")
 
 [node name="Control" type="Control" parent="." unique_id=776624122]
 layout_mode = 3
