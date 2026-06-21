@@ -4,6 +4,9 @@ extends Manager
 static var ships_id:Array[String] = _loadDatabase()
 static var player_ship:String =""
 
+@export var save_path: String = "user://ship_custom_colors.tres"  # Fichier de sauvegarde
+var data_shipplayer:Data_shipplayer
+
 static func _loadDatabase()->Array[String]:
 	var _list_id:Array[String] = []
 	var json = JSONUTILS.read("res://element/ships_database.json")

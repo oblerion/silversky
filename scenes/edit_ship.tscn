@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://sxfa4hx7681m"]
+
+[ext_resource type="Script" uid="uid://c36xwiyepdmii" path="res://scenes/edit_ship.gd" id="1_bxnql"]
+[ext_resource type="PackedScene" uid="uid://xpwy1o0l77vq" path="res://asset/environment/world_environment.res" id="2_nhvli"]
+[ext_resource type="PackedScene" uid="uid://dk50it4bnxrb4" path="res://asset/models/ship-v2.glb" id="3_s4vwq"]
+[ext_resource type="Theme" uid="uid://nkoqbfptvwiq" path="res://asset/materials/btn_theme.tres" id="4_nhvli"]
+
+[node name="Node3D" type="Node3D" unique_id=1511567165]
+script = ExtResource("1_bxnql")
+
+[node name="WorldEnvironment" parent="." unique_id=603698646 instance=ExtResource("2_nhvli")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1611538147]
+transform = Transform3D(1, 0, 0, 0, 0.96701485, 0.2547201, 0, -0.2547201, 0.96701485, 11.892883, 26.079704, 87.92239)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1997102173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7276077, 44.645878, 93.151)
+light_energy = 1.453
+light_indirect_energy = 0.396
+
+[node name="ship-v2" parent="." unique_id=1480797343 instance=ExtResource("3_s4vwq")]
+transform = Transform3D(0.7274136, 0, -0.68619925, 0, 1, 0, 0.68619925, 0, 0.7274136, -0.186, 4.153, 13.168165)
+
+[node name="Control" type="Control" parent="." unique_id=776624122]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorPicker" type="ColorPicker" parent="Control" unique_id=326076247]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 8.0
+offset_right = 1274.0
+offset_bottom = 615.0
+alignment = 1
+edit_alpha = false
+edit_intensity = false
+picker_shape = 2
+
+[node name="btn_reset" type="Button" parent="Control" unique_id=1562490913]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 648.0
+offset_right = 137.0
+offset_bottom = 707.0
+theme = ExtResource("4_nhvli")
+text = "reset"

@@ -2,8 +2,9 @@ extends Lnode3D
 var ship_list := []
 var weapon_list := []
 var ship_id := 0
-@onready var btn_back = get_node("Control/btn_back")
-@onready var btn_select = get_node("Control/btn_select")
+@onready var ship_name = $Control/ship_name
+@onready var btn_back = $Control/btn_back
+@onready var btn_select = $Control/btn_select
 @onready var btn_last:Button = get_node("Control/btn_-")
 @onready var btn_next:Button = get_node("Control/btn_+")
 
@@ -17,13 +18,6 @@ func _loadships()->Array[MeshInstance3D]:
 		meshinst.name = key
 		meshinst.position = Vector3(0,0,zoff)
 		meshinst.rotation_degrees.y = 130
-		var label = Label3D.new()
-		label.position.y = -30
-		label.rotation.y = deg_to_rad(360-meshinst.rotation_degrees.y)+deg_to_rad(-90)
-		label.text = key
-		label.font = load("res://asset/fonts/Softball_Gold.ttf")
-		label.font_size = 1200
-		meshinst.add_child(label)
 		_ship_list.push_back(meshinst)
 		add_child(meshinst)
 		zoff += 100
@@ -52,6 +46,7 @@ func _update_ship_position(ship_list: Array[MeshInstance3D], highlighted_id: int
 			var ship := ship_list[i]
 			ship.position.x = sin(rad) * radius
 			ship.position.z = cos(rad) * radius
+			if i==ship_id: ship_name.text = ship.name
 			# ship.position.y = 0  # si tu veux forcer Y à 0
 
 func _ready() -> void:

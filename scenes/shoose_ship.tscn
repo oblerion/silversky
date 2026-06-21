@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://8ert8nsvfpjs" path="res://asset/ui/button_base.res" id="6_4wc5o"]
 [ext_resource type="PackedScene" uid="uid://xpwy1o0l77vq" path="res://asset/environment/world_environment.res" id="6_yjt0j"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_4wc5o"]
+font = ExtResource("4_0lsin")
+font_size = 25
+
 [sub_resource type="LabelSettings" id="LabelSettings_g1847"]
 font = ExtResource("4_0lsin")
 font_size = 80
@@ -36,6 +40,16 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ship_name" type="Label" parent="Control" unique_id=1140525482]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 608.0
+offset_right = 704.0
+offset_bottom = 624.0
+text = "test"
+label_settings = SubResource("LabelSettings_4wc5o")
+horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Control" unique_id=1928295313]
 visible = false
@@ -98,3 +112,15 @@ offset_top = 640.0
 offset_right = 832.0
 offset_bottom = 699.0
 text = ">>"
+
+[node name="ColorPicker" type="ColorPicker" parent="Control" unique_id=639362242]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = -24.0
+offset_right = 386.0
+offset_bottom = 583.0
+edit_alpha = false
+edit_intensity = false
+picker_shape = 1
+can_add_swatches = false
