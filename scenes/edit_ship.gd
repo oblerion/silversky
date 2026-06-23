@@ -6,6 +6,8 @@ class_name Ship_editor
 @onready var control = $Control
 @onready var colorpick: ColorPicker = $Control/ColorPicker
 @onready var btn_reset:Button = $Control/btn_reset
+@onready var pos_rect = $Control/pos_rect.position
+@onready var pos_sel = $Control/pos_sel
 
 var colorrects: Array[ColorRect] = []
 var selected_index: int = 0
@@ -67,19 +69,25 @@ func _ready() -> void:
 		return
 		
 	var colors = data_shipplayer.colors
+	var lsize = 50
+	pos_sel.size = Vector2(lsize,lsize)
+	pos_sel.position.x = pos_rect.x-10
+	pos_sel.position.y =  pos_rect.y
 	
 	for i in colors.size():
 		var colorrec = ColorRect.new()
 		colorrec.color = colors[i]
-		var lsize = 50
-		colorrec.position.x = 15
-		colorrec.position.y = 15 + i * lsize * 1.2
+
+		colorrec.position.x = pos_rect.x
+		colorrec.position.y = pos_rect.y + i * lsize * 1.2
 		colorrec.size = Vector2(lsize,lsize)
 		
 		# Meilleure façon de capturer l'index
 		colorrec.mouse_entered.connect(func():
 			colorpick.color = colorrec.color
 			selected_index = i
+			pos_sel.position.y =  (pos_rect.y + i * lsize * 1.2)
+
 		)
 		
 		control.add_child(colorrec)

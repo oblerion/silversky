@@ -11,7 +11,7 @@ script = ExtResource("1_bxnql")
 [node name="WorldEnvironment" parent="." unique_id=603698646 instance=ExtResource("2_nhvli")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1611538147]
-transform = Transform3D(1, 0, 0, 0, 0.96701485, 0.2547201, 0, -0.2547201, 0.96701485, 11.892883, 26.079704, 87.92239)
+transform = Transform3D(1, 0, 0, 0, 0.96701485, 0.2547201, 0, -0.2547201, 0.96701485, 35.006, 26.08, 87.922)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1997102173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7276077, 44.645878, 93.151)
@@ -30,10 +30,10 @@ offset_bottom = 40.0
 
 [node name="ColorPicker" type="ColorPicker" parent="Control" unique_id=326076247]
 layout_mode = 0
-offset_left = 976.0
-offset_top = 8.0
-offset_right = 1274.0
-offset_bottom = 615.0
+offset_left = 968.0
+offset_top = 24.0
+offset_right = 1266.0
+offset_bottom = 561.0
 alignment = 1
 edit_alpha = false
 edit_intensity = false
@@ -47,3 +47,17 @@ offset_right = 137.0
 offset_bottom = 707.0
 theme = ExtResource("4_nhvli")
 text = "reset"
+
+[node name="pos_rect" type="ColorRect" parent="Control" unique_id=1743756452]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 24.0
+offset_right = 944.0
+offset_bottom = 64.0
+
+[node name="pos_sel" type="ColorRect" parent="Control" unique_id=1159667504]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 24.0
+offset_right = 896.0
+offset_bottom = 64.0
